@@ -43,18 +43,11 @@ public class PlayerControl : MonoBehaviour
         rb.AddForce(transform.up * 0.09f, ForceMode2D.Impulse);
     }
 
-
-
     private void FixedUpdate()
     {
         transform.position = transform.position + moveVelocity * Time.deltaTime;
         //rb.MovePosition(rb.position + moveVelocity * Time.deltaTime);
     }
 
-
-}
-
-public class PlayerControlJump : PlayerControl
-{
 
 }
