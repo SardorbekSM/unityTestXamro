@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
-
-    [SerializeField]
-    private bool forJump;
+    private float speed = 5F;
 
     private Vector3 moveVelocity;
-    private Rigidbody2D rb;
+    [SerializeField]
+    protected  Rigidbody2D rb;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,27 +17,10 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    protected virtual void Update()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
         moveVelocity = moveInput * speed;
-
-        Updated();
-    }
-    
-    // Jump 2th player
-    protected virtual void Updated()
-    {
-        if (Input.GetButton("Jump") && forJump)
-        {
-            Jump();
-        }
-    }
-
-    // Function for the Jump player
-    private void Jump()
-    {
-        rb.AddForce(transform.up * 0.09f, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
@@ -51,3 +31,5 @@ public class PlayerControl : MonoBehaviour
 
 
 }
+
+
