@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PCI : PlayerControl
+public class Jumping : Movement
 {
     protected override void Update()
     {
